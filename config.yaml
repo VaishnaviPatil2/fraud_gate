@@ -3,6 +3,9 @@
 
 seeds: [0, 1, 2, 3, 4]
 
+main_feature_set: "strict"
+secondary_feature_set: "extended"
+
 split:
   train_start: 1
   train_end: 520

@@ -16,3 +16,4 @@ RULES
 13. Any simulated or assumed quantity (step-up success, recovery success, delays, costs) must have "assumed" or "simulated" in its column name or label.
 14. Re-implemented baselines are labelled "our re-implementation on our split, not an exact reproduction".
 15. Report weak or negative results exactly as they come out. Never adjust code or data to make a target pass.
+16. MAIN feature contract = STRICT (plus graph features once available). EXTENDED (adds oldbalanceOrg, oldbalanceDest and derived ratios) is a SECONDARY "balance-aware" contract, reported separately and labelled as sensitive to a PaySim simulation artifact (fraud drains the origin account; see results/exp1b_diagnostic.csv). Where a task says EXTENDED, use STRICT as the main set unless the task text says "also run EXTENDED"; then report EXTENDED as secondary rows.
