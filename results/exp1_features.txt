@@ -1,0 +1,53 @@
+EXPERIMENT 1: FEATURE IMPORTANCES (Seed 0)
+============================================================
+
+Configuration: strict_unweighted
+----------------------------------------
+ 1. type_CASH_OUT                    : 0.243350
+ 2. type_PAYMENT                     : 0.236141
+ 3. type_TRANSFER                    : 0.214850
+ 4. type_CASH_IN                     : 0.178979
+ 5. step                             : 0.058799
+ 6. type_DEBIT                       : 0.041021
+ 7. amount                           : 0.026860
+
+Configuration: strict_weighted
+----------------------------------------
+ 1. type_PAYMENT                     : 0.420866
+ 2. type_CASH_IN                     : 0.350791
+ 3. type_CASH_OUT                    : 0.084550
+ 4. type_TRANSFER                    : 0.081938
+ 5. amount                           : 0.024673
+ 6. type_DEBIT                       : 0.019278
+ 7. step                             : 0.017905
+
+Configuration: extended_unweighted
+----------------------------------------
+ 1. amount_ge_oldbalanceOrg          : 0.926911
+ 2. amount_to_oldbalanceOrg_ratio    : 0.051748
+ 3. amount                           : 0.011401
+ 4. step                             : 0.003353
+ 5. type_TRANSFER                    : 0.001486
+ 6. type_PAYMENT                     : 0.001073
+ 7. oldbalanceOrg                    : 0.001029
+ 8. type_CASH_OUT                    : 0.000937
+ 9. oldbalanceDest_is_zero           : 0.000878
+10. type_CASH_IN                     : 0.000665
+11. oldbalanceDest                   : 0.000519
+12. type_DEBIT                       : 0.000000
+
+Configuration: extended_weighted
+----------------------------------------
+ 1. amount_ge_oldbalanceOrg          : 0.760449
+ 2. amount_to_oldbalanceOrg_ratio    : 0.137544
+ 3. type_TRANSFER                    : 0.024643
+ 4. oldbalanceOrg                    : 0.021123
+ 5. type_PAYMENT                     : 0.019786
+ 6. type_CASH_IN                     : 0.012981
+ 7. amount                           : 0.009882
+ 8. type_CASH_OUT                    : 0.006092
+ 9. oldbalanceDest_is_zero           : 0.003422
+10. oldbalanceDest                   : 0.002172
+11. step                             : 0.001146
+12. type_DEBIT                       : 0.000759
+
