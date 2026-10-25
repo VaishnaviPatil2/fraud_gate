@@ -1,0 +1,18 @@
+# Data
+data/raw/
+data/processed/
+
+# Virtual Environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+logs/
+*.log
+
+# Results and figures cache/temporary
+.pytest_cache/

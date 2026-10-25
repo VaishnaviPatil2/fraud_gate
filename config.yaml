@@ -1,0 +1,80 @@
+# Configuration for M.Tech Dissertation:
+# "Evidence-Gated Risk-Aware Fraud Prevention, Detection and Recovery for Digital Payment Systems"
+
+seeds: [0, 1, 2, 3, 4]
+
+split:
+  train_start: 1
+  train_end: 520
+  val_start: 521
+  val_end: 631
+  test_start: 632
+  test_end: 743
+
+sampling:
+  sample_fraction: 0.10
+  default_mode: "sample"
+
+gate:
+  provenance: 1.0
+  freshness: 0.5
+  freshness_formula: "exp(-age/30)"
+  freshness_decay_scale: 30.0
+  consistency: 0.75
+  corroboration: 0.75
+  aggregate: 0.75
+  weights:
+    provenance: 0.25
+    freshness: 0.25
+    consistency: 0.25
+    corroboration: 0.25
+  equal_weights: true
+
+policy_cutoffs:
+  block: 0.90
+  hold: 0.50
+  step_up: 0.20
+
+rules:
+  velocity:
+    window_steps: 1
+    max_count: 3
+  blacklist:
+    enabled: true
+    min_evidence_count: 2
+    max_history_steps: 720
+
+adaptation_bounds:
+  freshness_min: 0.30
+  freshness_max: 0.70
+  aggregate_min: 0.60
+  aggregate_max: 0.90
+  epsilon: 0.05
+  grid_step: 0.05
+
+conformal:
+  alpha_values: [0.05, 0.10]
+
+simulation_grids:
+  assumed_step_up_success_p: [0.5, 0.7, 0.9]
+  assumed_recovery_success_r: [0.5, 0.8]
+  simulated_reversal_window_steps: 24
+  simulated_alert_delay_steps: [1, 2, 6, 12, 24]
+  simulated_confirmation_delay_steps: [1, 6, 24]
+
+costs:
+  assumed_cost_false_positive: 10.0
+  assumed_cost_false_negative_multiplier: 1.0
+
+hardware:
+  usable_ram_gb: 6.0
+  max_cpus: 2
+  n_jobs: 2
+
+paths:
+  raw_paysim: "data/raw/PS_20174392719_1491204439457_log.csv"
+  raw_ieee_cis: "data/raw/train_transaction.csv"
+  processed_dir: "data/processed"
+  results_dir: "results"
+  figures_dir: "figures"
+  logs_dir: "logs"
